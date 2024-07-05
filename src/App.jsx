@@ -1,9 +1,16 @@
+import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom'
 import './App.scss'
+import Menu from './pages/Menu/Menu';
 
 function App() {
   return (
     <>
-      <h1>DineSmart - Diner</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Navigate to="/menu" />} />
+          <Route path="/menu" element={<Menu />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
