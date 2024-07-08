@@ -1,0 +1,36 @@
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/colors" as *;
+
+// Menu
+.menu {
+  background-color: white;
+  margin-left: 16px;
+  margin-right: 16px;
+  box-shadow: 0 5px 5px gray;
+  position: relative;
+  top: -64px;
+}
+
+.menu-header {
+  display: flex;
+  flex-direction: column;
+  background-color: $secondary-color-maxican-red;
+  align-items: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__title {
+    color: white;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+}
