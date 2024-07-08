@@ -1,13 +1,14 @@
 @use "../../styles/partials/breakpoints" as *;
 @use "../../styles/partials/colors" as *;
 
+// Food Types
 .food-types {
+  background-color: gray;
 
   &__list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
   }
 
   &__item {
@@ -15,6 +16,15 @@
     position: relative;
     display: inline-block;
     cursor: pointer;
+    border: 1px solid white;
+
+    @include tablet {
+      width: 33.33%;
+    }
+
+    @include desktop {
+      width: 25%;
+    }
   }
 
   &__image {

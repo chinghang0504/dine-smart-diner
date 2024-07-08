@@ -11,7 +11,6 @@ function FoodTypes() {
   // Load the data
   async function loadData() {
     const foodTypes = await getFoodTypes();
-    console.log(foodTypes);
     setFoodTypes(foodTypes);
   }
 
