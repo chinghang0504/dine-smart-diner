@@ -1,0 +1,42 @@
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/colors" as *;
+
+// Header
+.header {
+  background-color: $primary-color-maxican-red;
+  display: flex;
+  flex-direction: column;
+  padding-top: 16px;
+  padding-bottom: 80px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @include tablet {
+    flex-direction: row;
+  }
+}
+
+// Header Logo
+.header-logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  @include tablet {
+    justify-content: flex-start;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+  }
+
+  &__image {
+    width: 50px;
+  }
+
+  &__title {
+  }
+}
