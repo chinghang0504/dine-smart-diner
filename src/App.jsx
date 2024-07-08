@@ -4,6 +4,7 @@ import Menu from './pages/Menu/Menu';
 import Header from './components/Header/Header';
 import FoodTypes from './components/FoodTypes/FoodTypes';
 import FoodItems from './components/FoodItems/FoodItems';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function App() {
   return (

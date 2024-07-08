@@ -5,6 +5,41 @@
 .food-items {
   background-color: gray;
 
+  &__header {
+    display: flex;
+    flex-direction: column;
+    background-color: $secondary-color-maxican-red;
+    align-items: center;
+    justify-content: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__header-link {
+    color: white;
+    position: absolute;
+    left: 16px;
+    font-size: 32px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  &__header-title {
+    color: white;
+
+    @include tablet {
+      padding-left: 64px;
+    }
+  }
+
   &__list {
     display: flex;
     flex-direction: row;

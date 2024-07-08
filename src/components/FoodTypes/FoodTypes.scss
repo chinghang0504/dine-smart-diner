@@ -5,6 +5,26 @@
 .food-types {
   background-color: gray;
 
+  &__header {
+    display: flex;
+    flex-direction: column;
+    background-color: $secondary-color-maxican-red;
+    align-items: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__header-title {
+    color: white;
+  }
+
   &__list {
     display: flex;
     flex-direction: row;

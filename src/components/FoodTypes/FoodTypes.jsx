@@ -26,6 +26,9 @@ function FoodTypes() {
 
   return (
     <div className='food-types'>
+      <div className="food-types__header">
+        <h1 className="food-types__header-title">Menu</h1>
+      </div>
       <ul className='food-types__list'>
         {foodTypes.map((foodType, index) => {
           return (

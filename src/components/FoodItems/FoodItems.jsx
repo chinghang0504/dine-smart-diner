@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './FoodItems.scss';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { getFoodItems } from '../../services/server';
 
 function FoodItems() {
@@ -30,6 +30,10 @@ function FoodItems() {
 
   return (
     <div className='food-items'>
+      <div className="food-items__header">
+        <Link className='food-items__header-link' to='/menu'><i className="bi bi-arrow-left"></i></Link>
+        <h1 className="food-items__header-title">{foodtype}</h1>
+      </div>
       <ul className='food-items__list'>
         {foodItems.map((foodItem, index) => {
           return (
