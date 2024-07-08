@@ -1,8 +1,8 @@
 @use "../../styles/partials/breakpoints" as *;
 @use "../../styles/partials/colors" as *;
 
-// Food Types
-.food-types {
+// Food Items
+.food-items {
   background-color: gray;
 
   &__header {
@@ -10,10 +10,12 @@
     flex-direction: column;
     background-color: $secondary-color-maxican-red;
     align-items: center;
+    justify-content: center;
     padding-top: 16px;
     padding-bottom: 16px;
     padding-left: 16px;
     padding-right: 16px;
+    position: relative;
 
     @include tablet {
       flex-direction: row;
@@ -21,8 +23,21 @@
     }
   }
 
+  &__header-link {
+    color: white;
+    position: absolute;
+    left: 16px;
+    font-size: 32px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
   &__header-title {
     color: white;
+
+    @include tablet {
+      padding-left: 64px;
+    }
   }
 
   &__list {
@@ -53,12 +68,21 @@
     height: 100%;
   }
 
-  &__image-description {
+  &__image-description-container {
     position: absolute;
     bottom: 0;
-    left: 0;
     margin: 0;
     padding: 8px;
     color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+  }
+
+  &__image-description {
+  }
+
+  &__image-price {
   }
 }
