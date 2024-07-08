@@ -1,20 +1,33 @@
+import { useState } from 'react';
+import { getFoodTypes } from '../../services/server';
 import './FoodTypes.scss';
+import { useEffect } from 'react';
 
-function FoodTypes(props) {
-  const foodTypes = props.foodTypes;
-  const DATABASE_URL = import.meta.env.VITE_DATABASE_URL;
+function FoodTypes() {
+  const [foodTypes, setFoodTypes] = useState([]);
+
+  async function loadData() {
+    const foodTypes = await getFoodTypes();
+    console.log(foodTypes);
+    setFoodTypes(foodTypes);
+  }
+
+  useEffect(() => {
+    loadData();
+  }, []);
 
   return (
-    <ul className='food-types__list'>
-      {foodTypes.map((foodType, index) => {
-        return (
-          <li className='food-types__item' key={index}>
-            <img className='food-types__image' src={foodType.image} alt={foodType.type} />
-            {foodType.type}
-          </li>
-        )
-      })}
-    </ul>
+    <div className='food-types'>
+      <ul className='food-types__list'>
+        { foodTypes.map((foodType, index) => {
+            return (
+              <li className='food-types__item' key={index}>
+                <img className='food-types__image' src={foodType.image} alt={foodType.type} />
+              </li>
+            )
+        })}
+      </ul>
+    </div>
   )
 }
 
