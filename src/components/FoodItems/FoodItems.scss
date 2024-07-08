@@ -68,12 +68,21 @@
     height: 100%;
   }
 
-  &__image-description {
+  &__image-description-container {
     position: absolute;
     bottom: 0;
-    left: 0;
     margin: 0;
     padding: 8px;
     color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+  }
+
+  &__image-description {
+  }
+
+  &__image-price {
   }
 }

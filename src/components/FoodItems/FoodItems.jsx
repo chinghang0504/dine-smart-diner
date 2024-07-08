@@ -39,7 +39,10 @@ function FoodItems() {
           return (
             <li className='food-items__item' key={index} onClick={() => clickItem(foodItem)}>
               <img className='food-items__image' src={foodItem.image} alt={foodItem.name} />
-              <h2 className='food-items__image-description'>{foodItem.name}</h2>
+              <div className='food-items__image-description-container'>
+                <h3 className='food-items__image-description'>{foodItem.name}</h3>
+                <h3 className='food-items__image-price'>${foodItem.price}</h3>
+              </div>
             </li>
           )
         })}
