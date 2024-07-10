@@ -11,6 +11,11 @@ function Header() {
           <h1 className='header-logo__title'>DineSmart</h1>
         </Link>
       </div>
+      <div className='header-cart'>
+        <Link className='header-cart__logo' to='/cart'>
+          <i className="bi bi-cart"></i>
+        </Link>
+      </div>
     </div>
   )
 }

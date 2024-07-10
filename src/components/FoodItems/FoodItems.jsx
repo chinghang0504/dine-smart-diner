@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react';
 import './FoodItems.scss';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { getFoodItems } from '../../services/server';
+import { useCart } from '../../context/CartContext';
 
 function FoodItems() {
   const { foodtype } = useParams();
   const [foodItems, setFoodItems] = useState([]);
   const navigate = useNavigate();
+  const { addToCart } = useCart();
 
   // Load the data
   async function loadData() {
@@ -20,7 +22,7 @@ function FoodItems() {
 
   // Click an item
   function clickItem(foodItem) {
-    console.log(foodItem);
+    addToCart(foodItem);
   }
 
   // Execute once
