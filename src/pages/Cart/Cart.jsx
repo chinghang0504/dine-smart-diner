@@ -1,8 +1,18 @@
 import { useCart } from '../../context/CartContext';
 import './Cart.scss';
+import { sendFoodOrder } from '../../services/server';
 
 function Cart() {
   const { cart, removeFromCart, clearCart } = useCart();
+
+  async function clickSend() {
+    try {
+      await sendFoodOrder(cart)
+      clearCart();
+    } catch {
+      // No action
+    }
+  }
 
   return (
     <div>
@@ -21,6 +31,7 @@ function Cart() {
         </ul>
       )}
       {cart.length > 0 && <button onClick={clearCart}>Clear Cart</button>}
+      {cart.length > 0 && <button onClick={clickSend}>Send Cart</button>}
     </div>
   );
 }
