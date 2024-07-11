@@ -1,2 +1,110 @@
 @use "../../styles/partials/breakpoints" as *;
 @use "../../styles/partials/colors" as *;
+
+// Cart
+.cart {
+  background-color: white;
+  margin-left: 16px;
+  margin-right: 16px;
+  box-shadow: 0 5px 5px gray;
+  position: relative;
+  top: -64px;
+}
+
+// Cart Header
+.cart-header {
+  display: flex;
+  flex-direction: column;
+  background-color: $secondary-color-maxican-red;
+  align-items: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  // @include tablet {
+  //   flex-direction: row;
+  //   justify-content: space-between;
+  // }
+
+  &__title {
+    color: white;
+  }
+}
+
+// Cart Content
+.cart-content {
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__image {
+    width: 100%;
+
+    @include tablet {
+      width: 500px;
+    }
+  }
+
+  &__description {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  &__item{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid gray;
+    padding-bottom: 16px;
+    padding-top: 16px;
+  }
+
+  &__button {
+    background-color: $primary-color-maxican-red;
+    color: white;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 16px;
+    border: none;
+    margin-left: 8px;
+    margin-right: 8px;
+    cursor: pointer;
+    width: 150px;
+    align-self: center;
+
+    &:hover {
+      background-color: $secondary-color-maxican-red;
+    }
+  }
+}
+
+// Cart Action
+.cart-action {
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  &__button {
+    background-color: $primary-color-maxican-red;
+    color: white;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 16px;
+    border: none;
+    margin-left: 8px;
+    margin-right: 8px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $secondary-color-maxican-red;
+    }
+  }
+}
