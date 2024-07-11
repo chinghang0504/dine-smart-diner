@@ -10,6 +10,7 @@
   padding-bottom: 80px;
   padding-left: 16px;
   padding-right: 16px;
+  position: relative;
 
   @include tablet {
     flex-direction: row;
@@ -38,5 +39,16 @@
   }
 
   &__title {
+  }
+}
+
+// Header Cart
+.header-cart {
+  position: absolute;
+  right: 16px;
+
+  &__logo {
+    color: white;
+    font-size: 32px;
   }
 }

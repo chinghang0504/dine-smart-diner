@@ -1,0 +1,110 @@
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/colors" as *;
+
+// Modal
+.modal {
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: $secondary-color-maxican-red;
+  width: 98%;
+  border: 10px sloid gray;
+
+  @include tablet {
+    max-width: 700px;
+  }
+}
+
+// Modal Header
+.modal-header {
+  display: flex;
+  justify-content: center;
+  color: white;
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  &__title {
+    color: white;
+  }
+
+  &__close-button {
+    background-color: $secondary-color-maxican-red;
+    border: none;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    cursor: pointer;
+  }
+
+  &__close-icon {
+    color: white;
+    font-size: 32px;
+  }
+}
+
+// Modal Content
+.modal-content {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__image {
+    width: 50%;
+    padding-top: 16px;
+  }
+
+  &__description {
+    padding-top: 8px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  &__price {
+    padding-top: 8px;
+  }
+
+  &__quantity-container {
+    display: flex;
+    padding-top: 8px;
+  }
+
+  &__quantity-button {
+    border: none;
+    background-color: white;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: 32px;
+  }
+
+  &__quantity__quantity {
+    font-size: 32px;
+  }
+}
+
+// Modal Action
+.modal-action {
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  &__button {
+    background-color: $primary-color-maxican-red;
+    color: white;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 16px;
+    border: none;
+    margin-left: 8px;
+    margin-right: 8px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $secondary-color-maxican-red;
+    }
+  }
+}
