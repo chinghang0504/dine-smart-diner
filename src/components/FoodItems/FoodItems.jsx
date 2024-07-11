@@ -3,12 +3,15 @@ import './FoodItems.scss';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { getFoodItems } from '../../services/server';
 import { useCart } from '../../context/CartContext';
+import FoodItemModal from '../FoodItemModal/FoodItemModal';
 
 function FoodItems() {
   const { foodtype } = useParams();
   const [foodItems, setFoodItems] = useState([]);
   const navigate = useNavigate();
   const { addToCart } = useCart();
+  const [selectedFoodItem, setSelectedFoodItem] = useState({});
+  const [showModal, setShowModal] = useState(false);
 
   // Load the data
   async function loadData() {
@@ -22,7 +25,18 @@ function FoodItems() {
 
   // Click an item
   function clickItem(foodItem) {
+    setSelectedFoodItem(foodItem);
+    setShowModal(true);
+  }
+
+  // Close the modal
+  function closeModal() {
+    setShowModal(false);
+  }
+
+  function handleSend(foodItem) {
     addToCart(foodItem);
+    setShowModal(false);
   }
 
   // Execute once
@@ -49,6 +63,12 @@ function FoodItems() {
           )
         })}
       </ul>
+      <FoodItemModal
+        show={showModal}
+        handleClose={closeModal}
+        handleSend={handleSend}
+        foodItem={selectedFoodItem}
+      />
     </div>
   )
 }

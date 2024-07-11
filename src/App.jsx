@@ -7,6 +7,7 @@ import FoodItems from './components/FoodItems/FoodItems';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Cart from './pages/Cart/Cart';
 import { CartProvider } from './context/CartContext';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
