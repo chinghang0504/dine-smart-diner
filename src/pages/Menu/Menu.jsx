@@ -1,7 +1,17 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 import './Menu.scss'
+import { useEffect } from 'react';
 
-function menu() {
+function Menu() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const tableId = sessionStorage.getItem('tableId');
+    if (!tableId) {
+      navigate('/noid');
+    }
+  });
+
   return (
     <div className='menu'>
       <Outlet />
@@ -9,4 +19,4 @@ function menu() {
   )
 }
 
-export default menu
+export default Menu

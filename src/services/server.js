@@ -28,9 +28,10 @@ export async function getFoodItems(foodtype) {
 }
 
 // Send a food order
-export async function sendFoodOrder(cart) {
+export async function sendFoodOrder(tableId, cart) {
   const res = await axios.post(`${SERVER_URL}/diner/order`, {
-    cart: cart,
+    tableId,
+    cart,
   });
   return res.data;
 }
