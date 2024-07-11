@@ -31,11 +31,12 @@ function FoodItems() {
 
   // Close the modal
   function closeModal() {
+    setSelectedFoodItem({});
     setShowModal(false);
   }
 
-  function handleSend(foodItem) {
-    addToCart(foodItem);
+  function handleSend(foodItem, quantity) {
+    addToCart(foodItem, quantity);
     setShowModal(false);
   }
 
